@@ -1,5 +1,6 @@
 @charset "UTF-8";
-html,body {
+html,
+body {
   height: 100%;
 }
 
@@ -7,11 +8,15 @@ a {
   text-decoration: none;
 }
 
+
 /*lv ha*/
-a:link, a:visited, a:hover, a:active {
+
+a:link,
+a:visited,
+a:hover,
+a:active {
   text-decoration: none;
 }
-
 
 * {
   margin: 0;
@@ -24,12 +29,11 @@ a:link, a:visited, a:hover, a:active {
   vertical-align: middle;
 }
 
-
-.body_bg{
+.body_bg {
   background-color: #222d32;
 }
 
-.mt_150{
+.mt_150 {
   margin-top: 150px;
 }
 
@@ -43,6 +47,7 @@ a:link, a:visited, a:hover, a:active {
 
 
 /*侧边栏*/
+
 .lt_aside {
   width: 180px;
   height: 100%;
@@ -111,6 +116,7 @@ a:link, a:visited, a:hover, a:active {
 
 
 /*主体区样式*/
+
 .lt_main {
   height: 100%;
   width: 100%;
@@ -146,13 +152,14 @@ a:link, a:visited, a:hover, a:active {
   line-height: 50px;
 }
 
+
 /*报表*/
+
 .pic_left,
 .pic_right {
   width: 45%;
   height: 400px;
 }
-
 
 .fileupload_box {
   width: 82px;

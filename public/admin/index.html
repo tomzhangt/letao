@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="css/common.css">
     <title>Document</title>
 </head>
+
 <body>
     <!-- 左侧固定栏 -->
     <div class="lt_aside">
@@ -23,25 +25,28 @@
         <div class="userli">
             <ul>
                 <li>
-                    <a href="user.html"><span class="glyphicon glyphicon-user"></span>
+                    <a href="user.html">
+                        <span class="glyphicon glyphicon-user"></span>
                         用户管理
                     </a>
                 </li>
                 <li>
-                    <a href="javascript:;"><span class="glyphicon glyphicon-list"></span>
+                    <a href="javascript:;">
+                        <span class="glyphicon glyphicon-list"></span>
                         分类管理
                     </a>
                     <div class="child" style="display: none">
-                            <a  href="first.html">一级分类</a>
-                            <a href="second.html">二级分类</a>
+                        <a href="first.html">一级分类</a>
+                        <a href="second.html">二级分类</a>
                     </div>
                 </li>
                 <li>
-                    <a href="product.html"><span class="glyphicon glyphicon-tags"></span>
+                    <a href="product.html">
+                        <span class="glyphicon glyphicon-tags"></span>
                         商品管理
                     </a>
                 </li>
-                
+
             </ul>
         </div>
 
@@ -49,44 +54,184 @@
     <div class="lt_mian">
         <div class="topbar">
             <a href="javascript:;" class="pull-left icon_menu">
-                <span class="glyphicon glyphicon-align-justify"></span>              
+                <span class="glyphicon glyphicon-align-justify"></span>
             </a>
             <a href="javascript:;" class="pull-right icon_logout">
-                <span class="glyphicon glyphicon-log-out"></span>                    
+                <span class="glyphicon glyphicon-log-out"></span>
             </a>
         </div>
         <div class="rodenav">
-                <ol class="breadcrumb">
-                        <li><a href="#">系统管理</a></li>
-                        <li><a href="javascript:;">首页</a></li>
-                      </ol>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">系统管理</a>
+                </li>
+                <li>
+                    <a href="javascript:;">首页</a>
+                </li>
+            </ol>
+        </div>
+        <div class="echarts">
+            <div class="e_fl pull-left" id="e_fl"></div>
+            <div class="e_fr pull-right"></div>
         </div>
     </div>
     <div class="motai">
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-                    <div class="modal-dialog modal-sm" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                          <h4 class="modal-title">温馨提示</h4>
-                        </div>
-                        <div class="modal-body text-danger">
-                            
-                          <p><span class="glyphicon glyphicon-info-sign"></span>您确定要退出后台管理系统吗？</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                          <button type="button" class="btn btn-primary btn_logout">退出</button>
-                        </div>
-                      </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                  </div><!-- /.modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title">温馨提示</h4>
+                    </div>
+                    <div class="modal-body text-danger">
+
+                        <p>
+                            <span class="glyphicon glyphicon-info-sign"></span>您确定要退出后台管理系统吗？</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary btn_logout">退出</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
     </div>
+
+    
+
+
     <script src="lib/jquery/jquery.js"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
     <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
     <script src="lib/nprogress/nprogress.js"></script>
+    <script src="lib/echarts/echarts.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/login.js"></script>
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.querySelector('.e_fl'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '物品贩卖表'
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']
+            },
+            xAxis: {
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.querySelector('.e_fr'));
+    option = {
+    title: {
+        text: '堆叠区域图'
+    },
+    tooltip : {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            label: {
+                backgroundColor: '#6a7985'
+            }
+        }
+    },
+    legend: {
+        data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ['周一','周二','周三','周四','周五','周六','周日']
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'邮件营销',
+            type:'line',
+            stack: '总量',
+            areaStyle: {normal: {}},
+            data:[120, 132, 101, 134, 90, 230, 210]
+        },
+        {
+            name:'联盟广告',
+            type:'line',
+            stack: '总量',
+            areaStyle: {normal: {}},
+            data:[220, 182, 191, 234, 290, 330, 310]
+        },
+        {
+            name:'视频广告',
+            type:'line',
+            stack: '总量',
+            areaStyle: {normal: {}},
+            data:[150, 232, 201, 154, 190, 330, 410]
+        },
+        {
+            name:'直接访问',
+            type:'line',
+            stack: '总量',
+            areaStyle: {normal: {}},
+            data:[320, 332, 301, 334, 390, 330, 320]
+        },
+        {
+            name:'搜索引擎',
+            type:'line',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top'
+                }
+            },
+            areaStyle: {normal: {}},
+            data:[820, 932, 901, 934, 1290, 1330, 1320]
+        }
+    ]
+};
+
+
+
+    myChart.setOption(option);
+    </script>
 </body>
+
 </html>

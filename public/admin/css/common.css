@@ -101,10 +101,18 @@ a:active {
   margin-bottom: 20px;
   line-height: 50px;
 }
-/* .lt_mian .topbar.now {
+.lt_mian .topbar .now {
   padding-left: 20px;
-} */
+}
 .lt_mian .topbar a {
   color: #fff;
   font-size: 18px;
+}
+.lt_mian .echarts .e_fl {
+  width: 50%;
+  height: 400px;
+}
+.lt_mian .echarts .e_fr {
+  width: 50%;
+  height: 400px;
 }

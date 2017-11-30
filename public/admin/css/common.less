@@ -51,7 +51,7 @@ a:link, a:visited, a:hover, a:active {
   top: 0;
   left: 0;
   transition: all 1s;
-.now{
+&.now{
       left:-180px;
   }
   .brand a{
@@ -87,7 +87,7 @@ a:link, a:visited, a:hover, a:active {
         line-height: 40px;
         color: #ccc;
         text-align: center;
-        .now{
+        &.now{
             border-left-color: #069;
             background-color: #1d1f21;
             color: #fff;
@@ -101,7 +101,7 @@ a:link, a:visited, a:hover, a:active {
     height: 100%;
     padding-left: 180px;
     transition: all 1s;
-    .now{
+    &.now{
         padding-left: 0;
     }
     .topbar{
@@ -120,5 +120,16 @@ a:link, a:visited, a:hover, a:active {
         }
        
     }
+    .echarts{
+        .e_fl{
+            width: 50%;
+            height: 400px;
+        }
+        .e_fr{
+            width: 50%;
+            height: 400px;
+        }
+    }
+
+
 }
-div
